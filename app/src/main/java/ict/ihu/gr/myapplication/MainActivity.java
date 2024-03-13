@@ -35,8 +35,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onCalculateClick();
+
             }
         });
+        Button btnMC = findViewById(R.id.btnMC);
+        btnMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int buttonId = view.getId(); // Get the clicked button's ID
+                onMemoryClick(buttonId); // Pass the ID to onMemoryClick
+            }
+        });
+
+// Similar click listeners for other memory buttons (btnMR, btnMS, btnMAdd)
+
     }
 
     private void onCalculateClick() {
@@ -103,6 +115,41 @@ public class MainActivity extends AppCompatActivity {
         tvMem.setText(String.valueOf(memory));
 
     }
+
+
+    private void onMemoryClick(int buttonId) {
+        EditText etNumber1 = findViewById(R.id.etNumber1);
+        if (buttonId == R.id.btnMC) {
+            memory = 0.0;
+            memorySet = false;
+            Toast.makeText(getApplicationContext(), "Memory Cleared", Toast.LENGTH_SHORT).show();
+        } else if (buttonId == R.id.btnMR) {
+            if (memorySet) {
+                etNumber1.setText(String.valueOf(memory));
+            } else {
+                Toast.makeText(getApplicationContext(), "Memory Empty", Toast.LENGTH_SHORT).show();
+            }
+        } else if (buttonId == R.id.btnMS) {
+            try {
+                double currentNumber = Double.parseDouble(etNumber1.getText().toString());
+                memory = currentNumber;
+                memorySet = true;
+                Toast.makeText(getApplicationContext(), "Value Stored in Memory", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(), "Invalid Input", Toast.LENGTH_SHORT).show();
+            }
+        } else if (buttonId == R.id.btnMAdd) {
+            try {
+                double currentNumber = Double.parseDouble(etNumber1.getText().toString());
+                memory += currentNumber;
+                memorySet = true;
+                Toast.makeText(getApplicationContext(), "Value Added to Memory", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(), "Invalid Input", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
 }
 
 
