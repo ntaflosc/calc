@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }
         RadioGroup rgOperations = findViewById(R.id.rgOperations);
         TextView tvResult = findViewById(R.id.tvResult);
+        TextView tvMem = findViewById(R.id.tvMem);
         int selectedId = rgOperations.getCheckedRadioButtonId();
 
         if (selectedId == R.id.btnMC) { // Memory Clear
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             tvResult.setText("Operation Not Selected");
         }
-
+        tvMem.setText(String.valueOf(memory));
 
     }
 }
