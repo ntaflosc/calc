@@ -38,12 +38,51 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        Button btnMC = findViewById(R.id.btnMC);
+       /* Button btnMC = findViewById(R.id.btnMC);
         btnMC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int buttonId = view.getId(); // Get the clicked button's ID
                 onMemoryClick(buttonId); // Pass the ID to onMemoryClick
+            }
+        });*/
+
+        Button btnMC = findViewById(R.id.btnMC);
+
+        btnMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int buttonId = view.getId();
+                onMemoryClick(buttonId);
+            }
+        });
+
+
+        Button btnMS = findViewById(R.id.btnMS);
+
+        btnMS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int buttonId = view.getId();
+                onMemoryClick(buttonId);
+            }
+        });
+        Button btnMR = findViewById(R.id.btnMR);
+
+        btnMR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int buttonId = view.getId();
+                onMemoryClick(buttonId);
+            }
+        });
+        Button btnMAdd = findViewById(R.id.btnMAdd);
+
+        btnMAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int buttonId = view.getId();
+                onMemoryClick(buttonId);
             }
         });
 

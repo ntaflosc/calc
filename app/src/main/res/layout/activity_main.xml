@@ -121,6 +121,7 @@
         android:layout_marginStart="94dp"
         android:layout_marginTop="189dp"
         android:layout_marginEnd="17dp"
+        android:onClick="onMemoryClick"
         android:text="Set memory"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnMC"
