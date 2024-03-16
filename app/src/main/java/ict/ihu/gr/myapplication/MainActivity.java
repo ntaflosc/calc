@@ -158,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void onMemoryClick(int buttonId) {
         EditText etNumber1 = findViewById(R.id.etNumber1);
+        TextView tvResult = findViewById(R.id.tvResult);
         if (buttonId == R.id.btnMC) {
             memory = 0.0;
             memorySet = false;
@@ -170,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } else if (buttonId == R.id.btnMS) {
             try {
-                double currentNumber = Double.parseDouble(etNumber1.getText().toString());
+                double currentNumber = Double.parseDouble(tvResult.getText().toString());
                 memory = currentNumber;
                 memorySet = true;
                 Toast.makeText(getApplicationContext(), "Value Stored in Memory", Toast.LENGTH_SHORT).show();
@@ -179,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } else if (buttonId == R.id.btnMAdd) {
             try {
-                double currentNumber = Double.parseDouble(etNumber1.getText().toString());
+                double currentNumber = Double.parseDouble(tvResult.getText().toString());
                 memory += currentNumber;
                 memorySet = true;
                 Toast.makeText(getApplicationContext(), "Value Added to Memory", Toast.LENGTH_SHORT).show();
