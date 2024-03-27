@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
         String processedExpression = operand1 + "*" + operand2;
         Log.d("Calculator", "Processed Expression: " + processedExpression);
-        Toast.makeText(MainActivity.this,"Result: "+processedExpression +"Opernad1:"+ operand1 +"Operand2:"+ operand2, Toast.LENGTH_SHORT ).show();
+        //Toast.makeText(MainActivity.this,"Result: "+processedExpression +"Opernad1:"+ operand1 +"Operand2:"+ operand2, Toast.LENGTH_SHORT ).show();
         ShuntingYardCalculator calculator = new ShuntingYardCalculator();
         double result = 0;
         try {
